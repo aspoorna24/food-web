@@ -1,8 +1,8 @@
 import React from 'react'
 import './navbar.css'
 
-const Navbar = ({query,setQuery}) => {
-  
+const Navbar = ({setQuery,items,setCategory}) => {
+
   
    
   return (
@@ -20,12 +20,13 @@ const Navbar = ({query,setQuery}) => {
           <input type="text" placeholder='Search Food ...' onChange={(e) => setQuery(e.target.value)}/>
        </div>
        </div>
-        <ul>
-           <li>Breakfast</li>
-           <li>Lunch</li>
-           <li>Dinner</li>
-           <li>Snacks</li>
-           <li>Drinks</li>
+        <ul> 
+         
+         <li key="all" onClick={() => setCategory("all")}>All</li>
+         {
+            items.map((item)=><li key={item} onClick={() => setCategory(item)}>{item}</li>)
+         }
+        
         </ul>
 
      </nav>

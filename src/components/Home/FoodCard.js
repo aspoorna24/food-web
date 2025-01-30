@@ -2,14 +2,14 @@ import React from 'react'
 import './foodcard.css'
 
 
-const FoodCard = ({Foods,seach_food}) => {
- 
+const FoodCard = ({Foods,seach_food,category}) => {
+
   return (
     <>
       <div className="food">
         
-          {
-            Foods.filter(data=>data.title.toLowerCase().includes(seach_food.toLowerCase())).map((data) => {
+          {  
+            Foods.filter(data=> category.toLowerCase() === "all" || data.category.toUpperCase() === category.toUpperCase() && data.title.toLowerCase().includes(seach_food.toLowerCase())).map((data) => {
               return (
                 <>  
                  <div key={data.id} className='card'>
@@ -29,7 +29,8 @@ const FoodCard = ({Foods,seach_food}) => {
                 </>
               )
             })
-          }
+          
+        }
         
       </div>
     </>
