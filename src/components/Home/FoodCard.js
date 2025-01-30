@@ -1,17 +1,18 @@
 import React from 'react'
 import './foodcard.css'
-import Foods from './Fooddata'
 
-const FoodCard = () => {
+
+const FoodCard = ({Foods,seach_food}) => {
+ 
   return (
     <>
       <div className="food">
         
           {
-            Foods.map((data) => {
+            Foods.filter(data=>data.title.toLowerCase().includes(seach_food.toLowerCase())).map((data) => {
               return (
                 <>  
-                 <div className='card'>
+                 <div key={data.id} className='card'>
                   <div className='food-img'>
                     <img src={require(`../../../public/image/${data.img}`)} alt="" />
                   </div>

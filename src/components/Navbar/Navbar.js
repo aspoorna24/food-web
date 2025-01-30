@@ -1,6 +1,10 @@
 import React from 'react'
 import './navbar.css'
-const Navbar = () => {
+
+const Navbar = ({query,setQuery}) => {
+  
+  
+   
   return (
     <div className='navbar'>
      <nav>
@@ -13,7 +17,7 @@ const Navbar = () => {
     </h1>
        </div>
        <div className='search'>
-          <input type="text" placeholder='Search Food ...'/>
+          <input type="text" placeholder='Search Food ...' onChange={(e) => setQuery(e.target.value)}/>
        </div>
        </div>
         <ul>
