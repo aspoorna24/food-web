@@ -1,6 +1,6 @@
 import React from 'react'
 import './foodcard.css'
-
+import { Link } from "react-router-dom";
 
 const FoodCard = ({Foods,seach_food,category}) => {
 
@@ -9,7 +9,7 @@ const FoodCard = ({Foods,seach_food,category}) => {
       <div className="food">
         
           {  
-            Foods.filter(data=> category.toLowerCase() === "all" || data.category.toUpperCase() === category.toUpperCase() && data.title.toLowerCase().includes(seach_food.toLowerCase())).map((data) => {
+            Foods.filter(data=> (category.toLowerCase() === "all" || data.category.toUpperCase() === category.toUpperCase()) && data.title.toLowerCase().includes(seach_food.toLowerCase())).map((data) => {
               return (
                 <>  
                  <div key={data.id} className='card'>
@@ -19,7 +19,7 @@ const FoodCard = ({Foods,seach_food,category}) => {
                   <div className='food-detail'>
                     <h2>{data.title}</h2>
                     <p className="food-desc">{data.desc}</p>
-                    <button > View More</button>
+                    <Link to={`/detail/${data.id}`}><button > View More</button></Link>
                   </div>
                   <div className='food-type'>
                      {data.type === 'veg' ? <img src={require('../../assets/svg/veg-icon.png')} alt="veg" /> : <img src={require('../../assets/svg/non-veg-icon.png')} alt="non-veg" />}

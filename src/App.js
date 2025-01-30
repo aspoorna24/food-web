@@ -1,20 +1,17 @@
 import './App.css';
-import FoodCard from './components/Home/FoodCard';
-import Navbar from './components/Navbar/Navbar';
-import Foods from './Fooddata'
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Main from './components/Main/Main';
+import Detail from './components/Details/Detail';
 function App() {
-  const [query,setQuery]=useState('')
-  const seach_food = query;
-  const items = [...new Set(Foods.map((data) => data.category.toUpperCase()))];
-  const [category,setCategory]=useState('all')
-     
-  
 
-  return (
+      return (
     <div className="App">
-     <Navbar  setQuery={setQuery}  items={items} setCategory={setCategory} />
-     <FoodCard Foods={Foods} seach_food={seach_food} category={category}/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
+    </Router>
     </div>
   );
 }
