@@ -59,3 +59,11 @@ ul li:hover{
     background-color: #e74c3c;
 
 }
+
+@media screen and (max-width: 550px) {
+    ul{ 
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
