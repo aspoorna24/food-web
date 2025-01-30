@@ -1,12 +1,12 @@
 import React from 'react'
 import './detail.css'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Fooddata from '../Main/Fooddata'
 function Detail() {
   const { id } = useParams();
   
   const item = Fooddata.find((item) => item.id === parseInt(id))
-
+  const navigate = useNavigate();
   return (
    
     <div className='food-details'>
@@ -14,6 +14,7 @@ function Detail() {
        <img src={require(`../../../public/image/${item.img}`)} alt="No network" />
      </div>
      <div className='food-content'>
+       <button onClick={() => navigate(-1)}> Back</button>
        <h1>{item.title}</h1>
        <p className='desc'>{item.desc}</p>
        <p className='ingridents'>Ingredients needed : {item.ingredients.join(' , ')} 🍽️  </p>

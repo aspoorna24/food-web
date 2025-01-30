@@ -26,6 +26,23 @@
    
 }
 
+.food-content button{
+    padding: 5px 10px;
+    background-color: tomato;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 100px;
+}
+
+.food-content button:hover{
+    background-color: #e74c3c;
+}
+
+
 .food-content h1{
     text-align: center;
     text-transform: uppercase;
