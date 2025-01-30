@@ -1,0 +1,87 @@
+.food-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits the text to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." */
+    white-space: normal;
+    width: 300px;
+  }
+  
+.food{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    width: 520px;
+    height: 200px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.food-img img{
+    width: 150px;
+    height: 150px;
+    object-fit:cover;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-img img:hover{
+    
+    object-fit:fill;
+    transition: all 1s ease-in-out;
+   
+}
+
+.food-detail{
+    margin: 10px;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+   
+}
+
+.food-detail h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.food-detail p{
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.food-detail button{
+    padding: 5px 10px;
+    background-color: tomato;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 100px;
+}   
+
+.food-detail button:hover{
+    background-color: #e74c3c;
+}
+
+.food-type {
+    position: relative;
+    top: -80px;
+}
