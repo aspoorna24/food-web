@@ -80,12 +80,13 @@
     color: green;
 }
 
-@media screen and (max-width:550px){
+@media screen and (max-width:650px){
     .food-details{
         flex-direction: column;
     }
     .food-imgs{
         width: 100%;
+        height: 50vh;
     }
     .food-content{
         width: 100%;
